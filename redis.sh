@@ -1,5 +1,5 @@
 # prepare disk
-gcloud compute disks create disk-redis --size=10GB --type=pd-ssd
+gcloud compute disks create disk-redis --size=10GB --type=pd-standard
 gcloud compute instances create prepare-disk-instance --machine-type f1-micro
 gcloud compute instances attach-disk prepare-disk-instance --disk disk-redis
 gcloud compute ssh prepare-disk-instance -- 'sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb'
