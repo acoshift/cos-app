@@ -17,5 +17,7 @@ gcloud beta compute instances create-with-container bitcoind \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=disk-bitcoind,device-name=disk-bitcoind,mode=rw,boot=no" \
   --tags allow-bitcoind
+
+# setup firewall
 gcloud compute firewall-rules create allow-bitcoind \
   --allow tcp:8333,8332 --target-tags allow-bitcoind

@@ -20,5 +20,7 @@ gcloud beta compute instances create-with-container geth \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=disk-geth,device-name=disk-geth,mode=rw,boot=no" \
   --tags allow-geth
+
+# setup firewall
 gcloud compute firewall-rules create allow-geth \
   --allow tcp:8545,8546,30303 --target-tags allow-geth

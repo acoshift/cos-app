@@ -13,5 +13,7 @@ gcloud beta compute instances create-with-container postgres-dev \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=disk-postgres-dev,device-name=disk-postgres-dev,mode=rw,boot=no" \
   --tags allow-postgres
+
+# setup firewall
 gcloud compute firewall-rules create allow-postgres \
   --allow tcp:5432 --target-tags allow-postgres
