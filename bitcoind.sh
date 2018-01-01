@@ -8,7 +8,7 @@ gcloud compute instances delete prepare-disk-instance
 
 # start container
 gcloud beta compute instances create-with-container btc-1 \
-  --machine-type n1-standard-2 \
+  --machine-type n1-standard-1 \
   --container-image kylemanna/bitcoind@sha256:62afc775a839720ce608039e2ba1a5861a2d92b20a21ea24a1e3b1abda805e7c \
   --container-mount-host-path mount-path=/bitcoin,host-path=/mnt/disks/data,mode=rw \
   --container-arg="-dbcache=2000" \
