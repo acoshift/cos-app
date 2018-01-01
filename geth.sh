@@ -11,7 +11,7 @@ gcloud beta compute instances create-with-container eth-1 \
   --machine-type n1-standard-2 \
   --container-image ethereum/client-go:v1.7.3 \
   --container-mount-host-path mount-path=/root,host-path=/mnt/disks/data,mode=rw \
-  --container-arg="--cache=3500" \
+  --container-arg="--cache=2000" \
   --container-arg="--fast" \
   --container-arg="--rpc" \
   --container-arg="--rpcaddr=0.0.0.0" \
