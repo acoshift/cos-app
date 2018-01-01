@@ -27,6 +27,7 @@ gcloud beta compute instances create-with-container eth-mainnet-1 \
   --container-arg="--max-peers=200" \
   --container-arg="--scale-verifiers" \
   --container-arg="--num-verifiers=12" \
+  --container-arg="--jsonrpc-apis=all" \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=disk-eth-mainnet-1,device-name=disk-eth-mainnet-1,mode=rw,boot=no" \
   --tags eth-node
