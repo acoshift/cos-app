@@ -11,7 +11,7 @@ gcloud beta compute instances create-with-container btc-1 \
   --machine-type n1-standard-2 \
   --container-image kylemanna/bitcoind@sha256:62afc775a839720ce608039e2ba1a5861a2d92b20a21ea24a1e3b1abda805e7c \
   --container-mount-host-path mount-path=/bitcoin,host-path=/mnt/disks/data,mode=rw \
-  --container-arg="-dbcache=5500" \
+  --container-arg="-dbcache=5000" \
   --container-arg="-rpcallowip=::/0" \
   --container-arg="-par=4" \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
