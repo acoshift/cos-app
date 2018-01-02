@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk disk-postgres-
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container postgres-dev \
+gcloud beta compute instances create-with-container postgres-1 \
   --machine-type n1-standard-2 \
   --container-image postgres:10.1 \
   --container-mount-host-path mount-path=/var/lib/postgresql/data,host-path=/mnt/disks/data/data,mode=rw \
