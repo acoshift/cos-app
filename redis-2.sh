@@ -2,7 +2,7 @@ gcloud beta compute instances create-with-container redis-2 \
   --machine-type g1-small \
   --boot-disk-size "10" \
   --boot-disk-type "pd-standard" \
-  --container-image redis:4.0.6 \
+  --container-image redis:4.0.8 \
   --container-mount-host-path mount-path=/data,host-path=/mnt/stateful_partition/data,mode=rw \
   --container-command "redis-server" \
   --container-arg "--save 3600 1" \
