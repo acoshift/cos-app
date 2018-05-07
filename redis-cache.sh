@@ -2,12 +2,12 @@ gcloud beta compute instances create-with-container redis \
   --machine-type g1-small \
   --boot-disk-size "10" \
   --boot-disk-type "pd-standard" \
-  --container-image redis:4.0.8 \
+  --container-image redis:4.0.9 \
   --container-mount-host-path mount-path=/data,host-path=/mnt/stateful_partition/data,mode=rw \
   --container-command "redis-server" \
   --container-arg "--databases 1" \
   --container-arg "--save 3600 1" \
-  --container-arg "--save 1800 10" \
+  --container-arg "--save 1800 100" \
   --container-arg "--save 600 10000" \
-  --container-arg "--maxmemory 40mb" \
+  --container-arg "--maxmemory 1000mb" \
   --container-arg "--maxmemory-policy allkeys-lru"
