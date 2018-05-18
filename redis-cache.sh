@@ -5,7 +5,7 @@ gcloud beta compute instances create-with-container redis \
   --container-image redis:4.0.9 \
   --container-mount-host-path mount-path=/data,host-path=/mnt/stateful_partition/data,mode=rw \
   --container-command "redis-server" \
-  --container-arg "--databases 2" \
+  --container-arg "--databases 1" \
   --container-arg "--save 3600 1" \
   --container-arg "--save 1800 100" \
   --container-arg "--save 600 10000" \
