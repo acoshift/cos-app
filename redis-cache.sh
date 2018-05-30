@@ -7,4 +7,5 @@ gcloud beta compute instances create-with-container redis \
   --container-arg "--databases 1" \
   --container-arg "--save ''" \
   --container-arg "--maxmemory 60mb" \
-  --container-arg "--maxmemory-policy allkeys-lru"
+  --container-arg "--maxmemory-policy allkeys-lru" \
+  --metadata ^:^startup-script="echo never > /sys/kernel/mm/transparent_hugepage/enabled"
