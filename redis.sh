@@ -9,7 +9,7 @@ gcloud compute instances delete prepare-disk-instance
 # start container
 gcloud beta compute instances create-with-container redis-1 \
   --machine-type n1-standard-1 \
-  --container-image redis:4.0.9 \
+  --container-image redis:4.0.10 \
   --container-arg "--databases 1" \
   --container-mount-host-path mount-path=/data,host-path=/mnt/disks/data/data,mode=rw \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
