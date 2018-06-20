@@ -10,4 +10,5 @@ gcloud beta compute instances create-with-container redis \
   --container-arg "--save 1800 10" \
   --container-arg "--save 600 10000" \
   --container-arg "--maxmemory 700mb" \
-  --container-arg "--maxmemory-policy allkeys-lru"
+  --container-arg "--maxmemory-policy allkeys-lru" \
+  --metadata ^:^startup-script="echo never > /sys/kernel/mm/transparent_hugepage/enabled && sysctl -w net.core.somaxconn=65535"

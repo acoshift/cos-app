@@ -13,4 +13,5 @@ gcloud beta compute instances create-with-container redis-1 \
   --container-arg "--databases 1" \
   --container-mount-host-path mount-path=/data,host-path=/mnt/disks/data/data,mode=rw \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
-  --disk "name=data-redis-1,device-name=data-redis-1,mode=rw,boot=no"
+  --disk "name=data-redis-1,device-name=data-redis-1,mode=rw,boot=no" \
+  --metadata ^:^startup-script="echo never > /sys/kernel/mm/transparent_hugepage/enabled && sysctl -w net.core.somaxconn=65535"
