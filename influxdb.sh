@@ -8,7 +8,7 @@ gcloud compute instances delete prepare-disk-instance
 
 # start container
 gcloud beta compute instances create-with-container influxdb \
-  --machine-type g1-small \
+  --machine-type n1-standard-1 \
   --container-image influxdb:1.6.0 \
   --container-mount-host-path mount-path=/var/lib/influxdb,host-path=/mnt/disks/data/data,mode=rw \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
