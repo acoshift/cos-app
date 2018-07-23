@@ -10,7 +10,7 @@ gcloud compute instances delete prepare-disk-instance
 gcloud beta compute instances create-with-container mysql \
   --machine-type n1-standard-1 \
   --container-image mysql:5.7.22 \
-  --container-arg="MYSQL_ROOT_PASSWORD=root" \
+  --container-env="MYSQL_ROOT_PASSWORD=root" \
   --container-mount-host-path mount-path=/var/lib/mysql,host-path=/mnt/disks/data/data,mode=rw \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=data-mysql,device-name=data-mysql,mode=rw,boot=no"
