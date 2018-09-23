@@ -1,4 +1,4 @@
-gcloud beta compute instances create-with-container redis \
+gcloud compute instances create-with-container redis \
   --custom-cpu=1 \
   --custom-memory=1 \
   --boot-disk-size "10" \

@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk disk-btc-segwi
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container btc-segwit \
+gcloud compute instances create-with-container btc-segwit \
   --machine-type n1-standard-2 \
   --container-image parity/pbtc-ubuntu@sha256:ea11237167fcc4d5d96e35cf2f8d7d5e5da68d50e282ed21f57978bc6b5605ab \
   --container-mount-host-path mount-path=/root,host-path=/mnt/disks/data,mode=rw \

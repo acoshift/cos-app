@@ -1,4 +1,4 @@
-gcloud beta compute instances create-with-container redis \
+gcloud compute instances create-with-container redis \
   --machine-type g1-small \
   --boot-disk-size "10" \
   --boot-disk-type "pd-standard" \

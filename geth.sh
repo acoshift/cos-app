@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk data-eth
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container eth \
+gcloud compute instances create-with-container eth \
   --machine-type n1-standard-2 \
   --container-image ethereum/client-go:v1.8.1 \
   --container-mount-host-path mount-path=/root,host-path=/mnt/disks/data,mode=rw \

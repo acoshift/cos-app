@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk data-mysql
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container mysql \
+gcloud compute instances create-with-container mysql \
   --machine-type n1-standard-1 \
   --container-image mysql:5.7.22 \
   --container-env="MYSQL_ROOT_PASSWORD=root" \

@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk disk-eth-mainn
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container eth-mainnet \
+gcloud compute instances create-with-container eth-mainnet \
   --machine-type n1-standard-2 \
   --container-image parity/parity:v1.8.5 \
   --container-mount-host-path mount-path=/root,host-path=/mnt/disks/data,mode=rw \

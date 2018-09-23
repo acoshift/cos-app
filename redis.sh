@@ -7,7 +7,7 @@ gcloud compute instances detach-disk prepare-disk-instance --disk data-redis-1
 gcloud compute instances delete prepare-disk-instance
 
 # start container
-gcloud beta compute instances create-with-container redis-1 \
+gcloud compute instances create-with-container redis-1 \
   --machine-type n1-standard-1 \
   --container-image redis:4.0.11 \
   --container-arg "--databases 1" \
