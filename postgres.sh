@@ -9,7 +9,7 @@ gcloud compute instances delete prepare-disk-instance
 # start container
 gcloud compute instances create-with-container postgres \
   --machine-type n1-standard-1 \
-  --container-image postgres:10.5 \
+  --container-image postgres:11.0 \
   --container-mount-host-path mount-path=/var/lib/postgresql/data,host-path=/mnt/disks/data/data,mode=rw \
   --metadata ^:^startup-script="mkdir -p /mnt/disks/data && mount -o discard,defaults /dev/sdb /mnt/disks/data" \
   --disk "name=data-postgres,device-name=data-postgres,mode=rw,boot=no"
