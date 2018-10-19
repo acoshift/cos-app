@@ -3,7 +3,7 @@ gcloud compute instances create-with-container redis \
   --custom-memory=1 \
   --boot-disk-size "10" \
   --boot-disk-type "pd-standard" \
-  --container-image redis:4.0.11 \
+  --container-image redis:5.0.0 \
   --container-command "redis-server" \
   --container-arg "--databases 1" \
   --container-arg "--save ''" \

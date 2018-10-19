@@ -2,7 +2,7 @@ gcloud compute instances create-with-container redis \
   --machine-type g1-small \
   --boot-disk-size "10" \
   --boot-disk-type "pd-standard" \
-  --container-image redis:4.0.11 \
+  --container-image redis:5.0.0 \
   --container-mount-host-path mount-path=/data,host-path=/mnt/stateful_partition/data,mode=rw \
   --container-command "redis-server" \
   --container-arg "--databases 1" \
